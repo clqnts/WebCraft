@@ -34,7 +34,7 @@ function World( sx, sy, sz )
 	this.players = {};
 }
 
-// createFlatWorld()
+createFlatWorld()
 //
 // Sets up the world so that the bottom half is filled with dirt
 // and the top half with air.
@@ -71,7 +71,7 @@ World.prototype.createFromString = function( str )
 	}
 }
 
-// getBlock( x, y, z )
+getBlock( x, y, z )
 //
 // Get the type of the block at the specified position.
 // Mostly for neatness, since accessing the array
