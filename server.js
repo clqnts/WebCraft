@@ -106,3 +106,38 @@ setInterval( function()
 	world.saveToFile( "world" );
 	log( "Saved world to file." );
 }, SECONDS_BETWEEN_SAVES * 1000 );
+setInterval( function()
+
+{
+
+	var time = new Date().getTime() / 1000.0;	
+
+	// Simulate physics
+
+	physics.simulate();
+
+	
+
+	// Update local player
+
+	player.update();
+
+	
+
+	// Build a chunk
+
+	render.buildChunks( 5 );
+
+	
+
+	// Draw world
+
+	render.setCamera( player.getEyePos().toArray(), player.angles );
+
+	render.draw();
+
+	
+
+	while ( new Date().getTime() / 1000 - time < 0.016 );
+
+}, 1 );
